@@ -17,12 +17,6 @@
 >
 >  - Activate the Developer mode at the chrome://extensions/ page and upload the unpacked folder there.
 
-
-
-> MOZILLA FIREFOX:
->
->  - TBA
-
 </details>
 
 Please contact us if you have any question or suggestion: arthur.fernandes@withclutch.com.
