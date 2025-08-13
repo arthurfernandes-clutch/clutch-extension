@@ -1,4 +1,4 @@
-# ![Clutch logo](./images/clutch%20-%2032x32.png) Clutch internal extension ![Clutch logo](./images/clutch%20-%2032x32.png)
+# ![Clutch logo](./images/clutch%20-%2032x32.png) Clutch internal extension
 ### This is an internal extension made only for Clutch employees, developed by Clutch Customer Support Team.
 
 <details>
@@ -25,6 +25,6 @@
 
 </details>
 
-Please contact us if you have any question or suggestion: arthur.santos@awin.com.
+Please contact us if you have any question or suggestion: arthur.fernandes@withclutch.com.
 
 Use [this form](#) to report a bug or send feedback, your opinion is appreciated!
