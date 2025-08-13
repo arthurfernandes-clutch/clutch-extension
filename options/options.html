@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clutch Extension Options</title>
+    <script type="text/javascript" src="options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../source/reset.css" />
+    <link rel="stylesheet" type="text/css" href="options.css" />
+  </head>
+  <body class="extension-options">
+    <div class="header">
+      <img
+        class="header__image"
+        src="../images/Clutch_logo2.png"
+        alt="Clutch logo" />
+    </div>
+    <section class="content content_activate-options" id="activate-options">
+      <div class="option" id="extension-option">
+        <p class="option__title">Activate Extension (turn off to use only right-click option)</p>
+        <span class="option__selection">
+          <span class="option__select"></span>
+        </span>
+      </div>
+    </section>
+    <section class="content">
+      <div class="options-section" id="general-options">
+        <div class="section-header">
+          <h3 class="section-title">General Options</h3>
+          <div class="section-handler">
+            <span class="section-handler__icon"></span>
+            <span class="section-handler__icon"></span>
+          </div>
+        </div>
+        <div class="option option_select" id="position">
+          <p class="option__title">Position</p>
+          <select class="option__select-items" name="position">
+            <option class="option__select-item" value="right-bottom" selected>Right Bottom</option>
+            <option class="option__select-item" value="left-bottom">Left Bottom</option>
+            <option class="option__select-item" value="left-top">Left Top</option>
+            <option class="option__select-item" value="right-top">Right Top</option>
+          </select>
+        </div>
+        <div class="option" id="dao-sandbox">
+          <p class="option__title">DAO Sandbox</p>
+          <span class="option__selection">
+            <span class="option__select"></span>
+          </span>
+        </div>
+        <div class="option" id="lending-sandbox">
+          <p class="option__title">Lending Sandbox</p>
+          <span class="option__selection">
+            <span class="option__select"></span>
+          </span>
+        </div>
+        <div class="option" id="branch-sandbox">
+          <p class="option__title">Branch Portal Sandbox</p>
+          <span class="option__selection">
+            <span class="option__select"></span>
+          </span>
+        </div>
+      </div>
+      <div class="options-section" id="links-options">
+        <div class="section-header">
+          <h3 class="section-title">Links</h3>
+          <div class="section-handler">
+            <span class="section-handler__icon"></span>
+            <span class="section-handler__icon"></span>
+          </div>
+        </div>
+        <p class="option__button">Add New Link</p>
+        <div class="option option_links">
+        </div>
+        
+      </div>
+      <div class="options-section" id="extra-options">
+        <div class="section-header">
+          <h3 class="section-title">Additional Options</h3>
+          <div class="section-handler">
+            <span class="section-handler__icon"></span>
+            <span class="section-handler__icon"></span>
+          </div>
+        </div>
+        <div class="option" id="dark-mode">
+          <p class="option__title">Dark Mode</p>
+          <span class="option__selection">
+            <span class="option__select"></span>
+          </span>
+        </div>
+      </div>
+    </section>
+    <section class="action">
+      <div class="action__container" id="save">
+        <button class="action__button" type="button">Save Settings</button>
+      </div>
+      <div class="action__container" id="reset">
+        <button class="action__button" type="button">Reset Settings</button>
+      </div>
+      <p class="action__status"></p>
+    </section>
+    <a class="feedback" href="#" target="_blank">
+      <img
+        class="feedback__logo"
+        src="../images/clutch - 128x128.png"
+        alt="Clutch icon" />
+      <p class="feedback__text">Give us feedback!</p>
+    </a>
+  </body>
+</html>
