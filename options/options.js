@@ -41,24 +41,35 @@ window.addEventListener("load", () => {
       });
     });
 
-      let dao = document
+    let dao = document
       .querySelector("#dao-sandbox .option__selection")
       .classList.contains("option__selection_selected")
       ? true
       : false;
 
-      let lending = document
+    let lending = document
       .querySelector("#lending-sandbox .option__selection")
       .classList.contains("option__selection_selected")
       ? true
       : false;
 
-      let branch = document
+    let branch = document
       .querySelector("#branch-sandbox .option__selection")
       .classList.contains("option__selection_selected")
       ? true
       : false;
 
+    let taktile = document
+      .querySelector("#taktile .option__selection")
+      .classList.contains("option__selection_selected")
+      ? true
+      : false;
+
+    let freshdesk = document
+      .querySelector("#freshdesk .option__selection")
+      .classList.contains("option__selection_selected")
+      ? true
+      : false;
     
 
 
@@ -71,16 +82,18 @@ window.addEventListener("load", () => {
         dao: dao,
         lending: lending,
         branch: branch,
+        taktile: taktile,
+        freshdesk: freshdesk,
       },
       () => {
         // Update status to let user know options were saved.
         const status = document.querySelector(".action__status");
-        status.textContent = "Options saved!";
+        status.textContent = "Options saved! Reloading page...";
         setTimeout(() => {
           status.textContent = "";
         }, 750);
         setTimeout(() => {
-          chrome.runtime.reload();
+          location.reload();
         }, 1500);
       }
     );
@@ -97,16 +110,18 @@ window.addEventListener("load", () => {
         dao: true,
         lending: true,
         branch: true,
+        taktile: true,
+        freshdesk: true,
       },
       () => {
         // Update status to let user know options were saved.
         const status = document.querySelector(".action__status");
-        status.textContent = "Options Reseted!";
+        status.textContent = "Options Reseted! Reloading page...";
         setTimeout(() => {
           status.textContent = "";
         }, 750);
         setTimeout(() => {
-          chrome.runtime.reload();
+          location.reload();
         }, 1500);
       }
     );
@@ -123,6 +138,8 @@ window.addEventListener("load", () => {
         dao: true,
         lending: true,
         branch: true,
+        taktile: true,
+        freshdesk: true,
       },
       (items) => {
         items.extension
@@ -155,6 +172,18 @@ window.addEventListener("load", () => {
               .querySelector("#branch-sandbox .option__selection")
               .classList.add("option__selection_selected")
           : "";
+          items.taktile
+          ? document
+              .querySelector("#taktile .option__selection")
+              .classList.add("option__selection_selected")
+          : "";
+          items.freshdesk
+          ? document
+              .querySelector("#freshdesk .option__selection")
+              .classList.add("option__selection_selected")
+          : "";
+
+
           
         if ( items.linksList.length > 0 ) {
           let cont = document.querySelector(".option_links");
