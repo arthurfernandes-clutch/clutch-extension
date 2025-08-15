@@ -185,6 +185,7 @@ table {
     font-family: "Albert Sans", "Albert Sans Placeholder", sans-serif;
     box-sizing: border-box;
     transition: all .75s ease;
+    font-size: var(--font-size);
 }
 .body {
     display: flex;
@@ -333,6 +334,29 @@ const getOptions = () => {
                     <img src="https://arthurfernandes-clutch.github.io/clutch-extension/images/Clutch_logo_white.png" alt="Clutch logo" class="ext-btn__logo">
                 </div>
             </div>
+            <div class="content-container">
+                <div class="header">
+                    <img src="https://arthurfernandes-clutch.github.io/clutch-extension/images/Clutch_logo_white.png" alt="WithClutch Logo" class="header__logo">
+                </div>
+                <div class="clutch-container">
+                    <div class="main-container">
+                        <input type="text" max="30" class="main-container__input main-container__input_search" id="partner-alias">
+                        <a class="main-container__button" id="dao" href="#">DAO</a>
+                        <a class="main-container__button" id="lending" href="#">Lending</a>
+                        <a class="main-container__button" id="branch" href="#">Branch Portal</a>
+                    </div>
+                    <div class="add-container">
+                        <a href="#" class="add-continer__button" id="tickets">Tickets</a>
+                        <a href="#" class="add-continer__button" id="taktile">Taktile</a>
+                    </div>
+                </div>
+                <div class="links-container">
+                    <a href="#" class="add-continer__button">Link1</a>
+                </div>
+            </div>
+            <footer>
+                <p class="hide-extension">Hide Extension</p>
+            </footer>
             `;
 
             let iframeClasses = ["clutch-ext-iframe"];
