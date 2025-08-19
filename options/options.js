@@ -76,7 +76,7 @@ window.addEventListener("load", () => {
     chrome.storage.sync.set(
       {
         extension: activateExtension,
-        datafeed: activateDarkmode,
+        darkMode: activateDarkmode,
         position: position,
         linksList: linksToadd,
         dao: dao,
@@ -104,7 +104,6 @@ window.addEventListener("load", () => {
     chrome.storage.sync.set(
       {
         extension: true,
-        datafeed: true,
         position: "right-bottom",
         linksList: [],
         dao: true,
@@ -112,6 +111,7 @@ window.addEventListener("load", () => {
         branch: true,
         taktile: true,
         freshdesk: true,
+        darkMode: true,
       },
       () => {
         // Update status to let user know options were saved.
@@ -140,6 +140,7 @@ window.addEventListener("load", () => {
         branch: true,
         taktile: true,
         freshdesk: true,
+        darkMode: true,
       },
       (items) => {
         items.extension
@@ -147,7 +148,7 @@ window.addEventListener("load", () => {
               .querySelector("#extension-option .option__selection")
               .classList.add("option__selection_selected")
           : "";
-        items.datafeed
+        items.darkMode
           ? document
               .querySelector("#dark-mode .option__selection")
               .classList.add("option__selection_selected")
