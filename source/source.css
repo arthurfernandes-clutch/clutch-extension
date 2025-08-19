@@ -1,0 +1,293 @@
+:root {
+    --clutch-theme: #7146B5;
+    --clutch-theme-light: #EEE6F5;
+    --clutch-theme-dark: #424242;
+    --background: #f9f7fc;
+    --font-size: 14px;
+    --font-color-light: #ffffff;
+    --font-color-dark: #424242;
+}
+
+* {
+    font-family: "Albert Sans", "Albert Sans Placeholder", sans-serif;
+    box-sizing: border-box;
+    transition: all .75s ease;
+    font-size: var(--font-size);
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: var(--background);
+    color: var(--font-color-dark);
+    overflow: hidden;
+}
+.body_active {
+    width: 100%;
+    height: fit-content;
+}
+.body.dark-mode {
+    background: var(--clutch-theme-dark);
+    color: var(--font-color-light);
+}
+
+/* EXT BUTTON */
+.body:not(.body_active) .ext-btn__container {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body.body_active .ext-btn__container {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+.ext-btn__link-container {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px var(--clutch-theme) solid;
+    cursor: pointer;
+}
+.ext-btn__clutch-container {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.ext-btn__link-container svg {
+    width: 25px;
+}
+.body.dark-mode .ext-btn__link-container svg {
+    filter: invert(100%);
+}
+.ext-btn__clutch-container img {
+    width: 25px;
+    filter: invert(100%);
+}
+.body.dark-mode .ext-btn__clutch-container img {
+    filter: inherit;
+}
+.ext-btn__link-container:hover svg {
+    width: 30px;
+}
+.ext-btn__clutch-container:hover img {
+    width: 30px;
+}
+.ext-btn__clutch-container.ext-btn__clutch-container_ticket-match img {
+    filter: brightness(0) saturate(100%) invert(33%) sepia(18%) saturate(3652%) hue-rotate(232deg) brightness(93%) contrast(92%) !important;
+}
+.body.dark-mode .ext-btn__clutch-container.ext-btn__clutch-container_ticket-match img {
+    filter: brightness(0) saturate(100%) invert(71%) sepia(4%) saturate(4818%) hue-rotate(215deg) brightness(90%) contrast(82%) !important;
+}
+.body_active .ext-btn__container {
+    display: none;
+}
+/* CONTENT CONTAINER */
+.body.body_active .content-container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 0;
+    opacity: 1;
+}
+.body:not(.body_active) .content-container {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+.header__logo {
+    width: 200px;
+}
+.body.dark-mode .header__logo {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(268deg) brightness(107%) contrast(101%);
+}
+.close__button {
+    margin-left: auto;
+    top: 5px;
+    right: 5px;
+    width: 0;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.body.dark-mode .close__button {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(268deg) brightness(107%) contrast(101%);
+}
+.body_active .close__button {
+    width: 20px;
+    opacity: 1;
+    cursor: pointer;
+}
+.close__button:hover {
+    width: 22px;
+    opacity: .5;
+}
+/* CLUTCH CONTAINER */
+.clutch-container {
+    margin: 35px auto 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 35px;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 10px;
+    column-gap: 15px;
+}
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.main-container__input {
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: var(--font-color-dark);
+    background: var(--clutch-theme-light);
+    border-radius: 4px;
+}
+.input__selection-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 0px;
+    max-height: 150px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: white;
+    z-index: 10000000000;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#partner-alias:focus ~ .input__selection-list, .input__selection-list:hover {
+    height: fit-content;
+}
+.input__selection-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    color: var(--font-color-dark);
+    font-size: 13px;
+    cursor: pointer;
+}
+.input__selection-item_invalid {
+    display: none;
+}
+.main-container__button {
+    min-width: 25%;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: var(--clutch-theme);
+    color: var(--font-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container__button:hover {
+    opacity: .35;
+}
+.add-container, .links-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+.add-continer__button {
+    width: 40%;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--clutch-theme);
+    color: var(--font-color-light);
+}
+.add-continer__link {
+    min-width: 40%;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--clutch-theme);
+    color: var(--font-color-light);
+}
+.add-continer__button:hover, .add-continer__link:hover {
+    opacity: .35;
+}
+/* FOOTER */
+.body.body_active .footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+.body:not(.body_active) .footer {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+.hide-extension {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: var(--clutch-theme-dark);
+    color: var(--clutch-theme-light);
+    cursor: pointer;
+}
+.body.dark-mode .hide-extension {
+    background: var(--clutch-theme-light);
+    color: var(--font-color-dark);
+}
+.hide-extension:hover {
+    opacity: .35;
+}
