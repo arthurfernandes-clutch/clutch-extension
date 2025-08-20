@@ -38,13 +38,14 @@ const setIframe = (id = "new-ext-iframe", style = {}, classes = [], htmlContent,
     /*
     ADDING STYLES
     */
-    let styleSt = document.createElement("link");
-    resetSt.rel = "stylesheet",
-    resetSt.href = "https://arthurfernandes-clutch.github.io/clutch-extension/source/source.css";
-
     let resetSt = document.createElement("link");
-    resetSt.rel = "stylesheet",
+    resetSt.rel = "stylesheet";
     resetSt.href = "https://arthurfernandes-clutch.github.io/clutch-extension/source/reset.css";
+
+    let styleSt = document.createElement("link");
+    styleSt.rel = "stylesheet";
+    styleSt.href = "https://arthurfernandes-clutch.github.io/clutch-extension/source/source.css";
+    
     addedIframe.contentWindow.document.head.append(resetSt),
     addedIframe.contentWindow.document.head.append(styleSt);
     return addedIframe;
