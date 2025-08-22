@@ -60,6 +60,7 @@ const setOpenCloseEvent = (iframeId) => {
         if (evt.target.closest("body").id != "body__clutch-ext") {
             iframe.contentWindow.document.body.classList.remove("body_active");
             iframe.setAttribute('style', iframe.getAttribute('style') + closeAtt);
+            cleanInputs(["#partner-alias"],iframe.contentWindow.document);
         }
     });
 
@@ -73,6 +74,7 @@ const setOpenCloseEvent = (iframeId) => {
     iframe.contentWindow.document.querySelector(".close__button").addEventListener("click", () => {
         iframe.contentWindow.document.body.classList.remove("body_active");
         iframe.setAttribute('style', iframe.getAttribute('style') + closeAtt);
+        cleanInputs(["#partner-alias"],iframe.contentWindow.document);
     })
 }
 
@@ -113,6 +115,11 @@ const handleAliaslist = (list, iframeId, contClass, elClass, inputId) => {
 
 }
 
+const cleanInputs = (inputs = [], container) => {
+    inputs.forEach((i) => {
+        container.querySelector(i).value = "";
+    });
+}
 
 const getOptions = () => {
     chrome.storage.sync.get(
